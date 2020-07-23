@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://dingyi222666.github.io/blog</id>
+    <id>https://dingyi222666.github.io</id>
     <title>dingyi</title>
-    <updated>2020-07-23T19:19:07.507Z</updated>
+    <updated>2020-07-23T19:23:06.357Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://dingyi222666.github.io/blog"/>
-    <link rel="self" href="https://dingyi222666.github.io/blog/atom.xml"/>
+    <link rel="alternate" href="https://dingyi222666.github.io"/>
+    <link rel="self" href="https://dingyi222666.github.io/atom.xml"/>
     <subtitle>dingyi</subtitle>
-    <logo>https://dingyi222666.github.io/blog/images/avatar.png</logo>
-    <icon>https://dingyi222666.github.io/blog/favicon.ico</icon>
+    <logo>https://dingyi222666.github.io/images/avatar.png</logo>
+    <icon>https://dingyi222666.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, dingyi</rights>
     <entry>
         <title type="html"><![CDATA[基于github pages的静态博客]]></title>
-        <id>https://dingyi222666.github.io/blog/post/myfirstblog/</id>
-        <link href="https://dingyi222666.github.io/blog/post/myfirstblog/">
+        <id>https://dingyi222666.github.io/post/myfirstblog/</id>
+        <link href="https://dingyi222666.github.io/post/myfirstblog/">
         </link>
         <updated>2020-07-23T18:41:11.000Z</updated>
     </entry>
