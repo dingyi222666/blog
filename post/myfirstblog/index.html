@@ -76,6 +76,32 @@
     </section>
 
       
+            
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '70cdb09c233bce1e27cc',
+    clientSecret: '89878faa4895230c72641eb9a7d461c9d7939cd0',
+    repo: 'dingyi222666.github.io',
+    owner: 'dingtyi222666',
+    admin: ['dingtyi222666'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+            
+
+            
+      
 </main>
 
 <nav class="mdui-container mdui-m-t-2 mdui-m-b-2">
