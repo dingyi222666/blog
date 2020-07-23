@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- 必要参数 -->
+<meta charset="utf-8"/>
+<title>基于github pages的静态博客 | dingyi</title>
+<meta name="keywords" content="关键词"/>
+<meta name="description" content="简述"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable:no"/>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<link rel="shortcut icon" href="favicon.ico">
+<!-- CSS -->
+<link rel="stylesheet" href="https://dingyi222666.github.io/blog/media/css/mdui.min.css">
+<link rel="stylesheet" href="https://dingyi222666.github.io/blog/media/css/modify.css">
+<link rel="stylesheet" href="https://dingyi222666.github.io/blog/media/css/github-gist.min.css">
+<link rel="stylesheet" href="https://dingyi222666.github.io/blog/media/css/railscasts.min.css">
+</head>
+<body id="post" class="mdui-appbar-with-toolbar mdui-theme-primary-blue-grey mdui-theme-accent-blue mdui-theme-layout-dark">
+<header role="banner">
+    <div class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-shadow-0">
+        <div class="mdui-toolbar">
+            <button class="mdui-btn mdui-btn-icon" id="menu" mdui-drawer="{target:'#drawer',overlay:true,swipe:true}"><i class="mdui-icon material-icons">menu</i></button>
+            <a href="https://dingyi222666.github.io/blog" class="mdui-typo-headline">dingyi</a>
+            <div class="mdui-toolbar-spacer"></div>
+            <button class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '深色样式切换', position: 'left'}" id="DarkStyle"><i class="mdui-icon material-icons">brightness_4</i></button>
+        </div>
+    </div>
+</header>
+
+<nav id="drawer" class="mdui-drawer mdui-drawer-full-height mdui-drawer-close">
+    <ul class="mdui-list">
+        <a href="/" class="menu"><li class="mdui-list-item mdui-ripple">首页</li></a>
+        <a href="/archives" class="menu"><li class="mdui-list-item mdui-ripple">归档</li></a>
+        <a href="/tags" class="menu"><li class="mdui-list-item mdui-ripple">标签</li></a>
+        
+        <a href="https://github.com/CPlayer-CN/gridea-theme-cplayer-material" class="spread"><li class="mdui-list-item mdui-ripple">主题主页</li></a>
+    </ul>
+</nav>
+
+
+<main class="mdui-container mdui-typo mdui-m-t-2">
+    <section class="mdui-card">
+        
+        <div class="mdui-card-primary">
+            <div class="mdui-card-primary-title">基于github pages的静态博客</div>
+            <div class="mdui-card-primary-subtitle">发布于 2020-07-24，包含标签 <a href="https://dingyi222666.github.io/blog/tag/oEu0nH237/" class="post-tags"># 闲聊</a>。</div>
+        </div>
+        <div class="mdui-card-content"><h2 id="起因">起因</h2>
+<p>在搭建多次wordpress博客失败后（其实也不是失败就是最后都是😅），我终于想起了静态博客</p>
+<h2 id="过程">过程</h2>
+<p>然后百度搜索静态博客的搭建方法<br>
+搜索出来大家都推荐hugo啥的，虽然好但是都是需要敲命令，对于我这样的小白不算是友好啊。<br>
+然后在搜，就发现了一个好东西<br>
+<a href="https://gridea.dev/">Gridea</a><br>
+首页上面写着</p>
+<blockquote>
+<p>Gridea 是一个静态博客写作客户端，帮助你更容易地构建并管理博客或任何静态站点。</p>
+</blockquote>
+<p>客户端，哦，这才像样嘛。然后我屁颠屁颠的去下载了它。<br>
+首页是这样的<br>
+<img src="https://i.loli.net/2020/07/24/3ZkEmIjA7Ku2vox.png" alt="首页" loading="lazy"><br>
+非常简洁啊有木有，这才是我想要的嘛。<br>
+然后就去github里面创建了一个新仓库，开启github pages<br>
+<img src="https://i.loli.net/2020/07/24/eoExiv9bs51X3mc.png" alt="" loading="lazy"><br>
+在Source里选好需要使用的分支就好啦。<br>
+然后去创建一个token，在Gridea里简单配置就可以好了。<br>
+静态博客就搭好啦。</p>
+<h2 id="结语">结语</h2>
+<p>但是我还没想起来我要写什么呢，以及，我还在学markdown......</p>
+</div>
+        <div class="mdui-card-header">
+            <img class="mdui-card-header-avatar" src="https://dingyi222666.github.io/blog/images/avatar.png">
+            <div class="mdui-card-header-title">dingyi</div>
+            <div class="mdui-card-header-subtitle">dingyi</div>
+        </div>
+    </section>
+
+      
+</main>
+
+<nav class="mdui-container mdui-m-t-2 mdui-m-b-2">
+    
+    
+</nav>
+
+<div class="mdui-m-t-2 mdui-text-center mdui-typo">
+    友情链接: <a href="http://www.1xie.xyz/">筱谢博客</a>
+<p></p>
+Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+</div>
+
+<script src="https://dingyi222666.github.io/blog/media/js/jquery.min.js"></script>
+<script src="https://dingyi222666.github.io/blog/media/js/mdui.min.js"></script>
+<script src="https://dingyi222666.github.io/blog/media/js/modify.js"></script>
+<script src="https://dingyi222666.github.io/blog/media/js/highlight.min.js"></script>
+<script src="https://dingyi222666.github.io/blog/media/js/lightense.min.js"></script>
+<script>
+// 初始化-高亮代码
+hljs.initHighlightingOnLoad();
+// 初始化-文章图片放大
+window.addEventListener('load', function () {
+    Lightense('#post .mdui-card-content img');
+}, false);
+</script>
+
+</body>
+</html>
