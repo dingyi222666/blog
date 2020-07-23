@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dingyi222666.github.io/blog</id>
     <title>dingyi</title>
-    <updated>2020-07-23T19:17:56.484Z</updated>
+    <updated>2020-07-23T19:19:07.507Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dingyi222666.github.io/blog"/>
     <link rel="self" href="https://dingyi222666.github.io/blog/atom.xml"/>
@@ -16,28 +16,5 @@
         <link href="https://dingyi222666.github.io/blog/post/myfirstblog/">
         </link>
         <updated>2020-07-23T18:41:11.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="起因">起因</h2>
-<p>在搭建多次wordpress博客失败后（其实也不是失败就是最后都是😅），我终于想起了静态博客</p>
-<h2 id="过程">过程</h2>
-<p>然后百度搜索静态博客的搭建方法<br>
-搜索出来大家都推荐hugo啥的，虽然好但是都是需要敲命令，对于我这样的小白不算是友好啊。<br>
-然后在搜，就发现了一个好东西<br>
-<a href="https://gridea.dev/">Gridea</a><br>
-首页上面写着</p>
-<blockquote>
-<p>Gridea 是一个静态博客写作客户端，帮助你更容易地构建并管理博客或任何静态站点。</p>
-</blockquote>
-<p>客户端，哦，这才像样嘛。然后我屁颠屁颠的去下载了它。<br>
-首页是这样的<br>
-<img src="https://i.loli.net/2020/07/24/3ZkEmIjA7Ku2vox.png" alt="首页" loading="lazy"><br>
-非常简洁啊有木有，这才是我想要的嘛。<br>
-然后就去github里面创建了一个新仓库，开启github pages<br>
-<img src="https://i.loli.net/2020/07/24/eoExiv9bs51X3mc.png" alt="" loading="lazy"><br>
-在Source里选好需要使用的分支就好啦。<br>
-然后去创建一个token，在Gridea里简单配置就可以好了。<br>
-静态博客就搭好啦。</p>
-<h2 id="结语">结语</h2>
-<p>但是我还没想起来我要写什么呢，以及，我还在学markdown......</p>
-]]></content>
     </entry>
 </feed>
