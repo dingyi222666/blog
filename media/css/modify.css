@@ -85,3 +85,8 @@ figure {
 .mdui-list-item {
     border-radius: 5px;
 }
+
+#menu .mdui-list-item {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
