@@ -10,6 +10,8 @@ function toggleStyle() {
         var time = (new Date).getHours();
         if('6' < time && time < '18') {
             setStyleLight()
+        } else {
+            setStyleDark();
         }
     }
 }
