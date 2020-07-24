@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dingyi.dowy.cn</id>
     <title>dingyi</title>
-    <updated>2020-07-24T07:28:12.186Z</updated>
+    <updated>2020-07-24T07:29:24.696Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dingyi.dowy.cn"/>
     <link rel="self" href="https://dingyi.dowy.cn/atom.xml"/>
@@ -12,8 +12,8 @@
     <rights>All rights reserved 2020, dingyi</rights>
     <entry>
         <title type="html"><![CDATA[github pages 用netlify进行cdn加速]]></title>
-        <id>https://dingyi.dowy.cn/post/github-pages-yong-netlify-jin-xing-cdn-jia-su/</id>
-        <link href="https://dingyi.dowy.cn/post/github-pages-yong-netlify-jin-xing-cdn-jia-su/">
+        <id>https://dingyi.dowy.cn/post/netlify-freecdn/</id>
+        <link href="https://dingyi.dowy.cn/post/netlify-freecdn/">
         </link>
         <updated>2020-07-24T06:35:21.000Z</updated>
     </entry>

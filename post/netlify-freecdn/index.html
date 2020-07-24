@@ -3,7 +3,7 @@
 <head>
 <!-- 必要参数 -->
 <meta charset="utf-8"/>
-<title>基于github pages的静态博客 | dingyi</title>
+<title>github pages 用netlify进行cdn加速 | dingyi</title>
 <meta name="keywords" content="关键词"/>
 <meta name="description" content="简述"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable:no"/>
@@ -44,31 +44,46 @@
     <section class="mdui-card" >
         
         <div class="mdui-card-primary">
-            <div class="mdui-card-primary-title">基于github pages的静态博客</div>
-            <div class="mdui-card-primary-subtitle">发布于 2020-07-24，包含标签 <a href="https://dingyi.dowy.cn/tag/oEu0nH237/" class="post-tags"># 闲聊</a>。</div>
+            <div class="mdui-card-primary-title">github pages 用netlify进行cdn加速</div>
+            <div class="mdui-card-primary-subtitle">发布于 2020-07-24，包含标签 <a href="https://dingyi.dowy.cn/tag/mxhS31Xpt/" class="post-tags"># 技术</a>。</div>
         </div>
-        <div class="mdui-card-content"><h2 id="起因">起因</h2>
-<p>在搭建多次wordpress博客失败后(<s>其实也不是失败就是最后都是😅</s>)，我终于想起了静态博客</p>
-<h2 id="过程">过程</h2>
-<p>然后百度搜索静态博客的搭建方法<br>
-搜索出来大家都推荐hugo啥的，虽然好但是都是需要敲命令，对于我这样的小白不算是友好啊。<br>
-然后在搜，就发现了一个好东西<br>
-<a href="https://gridea.dev/">Gridea</a><br>
-首页上面写着</p>
-<blockquote>
-<p>Gridea 是一个静态博客写作客户端，帮助你更容易地构建并管理博客或任何静态站点。</p>
-</blockquote>
-<p>客户端，哦，这才像样嘛。然后我屁颠屁颠的去下载了它。<br>
-首页是这样的<br>
-<img src="https://i.loli.net/2020/07/24/3ZkEmIjA7Ku2vox.png" alt="首页" loading="lazy"><br>
-非常简洁啊有木有，这才是我想要的嘛。<br>
-然后就去github里面创建了一个新仓库，开启github pages<br>
-<img src="https://i.loli.net/2020/07/24/eoExiv9bs51X3mc.png" alt="" loading="lazy"><br>
-在Source里选好需要使用的分支就好啦。<br>
-然后去创建一个token，在Gridea里简单配置就可以好了。<br>
-静态博客就搭好啦。</p>
+        <div class="mdui-card-content"><h2 id="前言">前言</h2>
+<p>在我的第一篇博文里面，我搭建了一个静态博客。<br>
+但是，众所周知，github在国内的访问会非常慢，于是你就会得到这样的结果<br>
+<img src="https://i.loli.net/2020/07/24/oa2DSwVJpCkBs9X.png" alt="" loading="lazy"><br>
+是不是很cao蛋对吧。<br>
+我们也知道国内有很多的cdn服务，基本上是交一点钱就可以拉满了。<br>
+如果，你想<strong>白嫖</strong>呢？</p>
+<h2 id="主题">主题</h2>
+<p>虽然白嫖了之后的效果也不怎么好，但至少有加速了(<s>然而我这里的速度还不如github官方域名的速度</s>)<br>
+<img src="https://i.loli.net/2020/07/24/k8CqGLZVHYgSui2.png" alt="" loading="lazy"><br>
+首先我们访问netlify的<a href="https://app.netlify.com/">官网</a><br>
+(在访问这类外国网站的时候建议你翻梯子，不然的话可能会出现意想不到的神奇事件<s>比如卡加载主页</s>)</p>
+<p>如图<br>
+<img src="https://i.loli.net/2020/07/24/G2IYMWXehDRZvBt.png" alt="如图" loading="lazy"><br>
+然后我们点击New site from Git<br>
+进入如图的页面，选择github<br>
+<img src="https://i.loli.net/2020/07/24/vbcaXynLGNlZJ29.png" alt="" loading="lazy"><br>
+会弹出来新的窗口，你需要等待，然后确定啊啥的<br>
+接下来选择一个仓库用于搭建页面<br>
+<img src="https://s1.ax1x.com/2020/07/24/Uj4ajO.png" alt="" loading="lazy"><br>
+选择好了之后进入这个页面<br>
+<img src="https://s1.ax1x.com/2020/07/24/Uj5cdJ.png" alt="" loading="lazy"><br>
+这里直接下一步<br>
+就基本完成啦<br>
+<img src="https://s1.ax1x.com/2020/07/24/Uj5XWt.png" alt="完成后的主页" loading="lazy"><br>
+然后直接访问系统默认赠送的域名，就会发现可以了<br>
+对了，当你关联的仓库commit后这个网站就会自动更新</p>
+<h2 id="绑定域名">绑定域名</h2>
+<p>前面我们大体是完成了，但是这个域名太长啦，我们需要绑定自己的域名。<br>
+在你的网站主页里，点击Domain settings</p>
+<p>如图<br>
+<img src="https://s1.ax1x.com/2020/07/24/UjI5hn.png" alt="如图" loading="lazy"><br>
+然后输入你的需要绑定的域名，下一步。<br>
+一直下一步，直到回到了添加列表那里。<br>
+然后给你的域名直接cname解析到系统一开始赠送你的域名<br>
+等一会发现你添加的域名的颜色变成绿色，就说明添加成功了。</p>
 <h2 id="结语">结语</h2>
-<p>但是我还没想起来我要写什么呢，以及，我还在学markdown......</p>
 </div>
         <div class="mdui-card-header">
             <img class="mdui-card-header-avatar" src="https://dingyi.dowy.cn/images/avatar.png">
@@ -107,8 +122,8 @@
 </main>
 
 <nav class="mdui-container mdui-m-t-2 mdui-m-b-2">
-    <a href="https://dingyi.dowy.cn/post/netlify-freecdn/" mdui-tooltip="{content: '上一篇', position: 'right'}"><button class="mdui-btn mdui-btn-icon mdui-btn-dense mdui-color-theme-accent mdui-ripple mdui-m-r-1"><i class="mdui-icon material-icons">arrow_back</i></button>github pages 用netlify进行cdn加速</a>
     
+    <a href="https://dingyi.dowy.cn/post/myfirstblog/" mdui-tooltip="{content: '下一篇', position: 'left'}" class="mdui-float-right">基于github pages的静态博客<button class="mdui-btn mdui-btn-icon mdui-btn-dense mdui-color-theme-accent mdui-ripple mdui-m-l-1"><i class="mdui-icon material-icons">arrow_forward</i></button></a>
 </nav>
 
 <div class="mdui-m-t-2 mdui-text-center mdui-typo">
