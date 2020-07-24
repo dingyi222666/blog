@@ -87,6 +87,7 @@ figure {
 
 .myfoot-next {
     
+    display: inline-block;
     text-align: right;
     box-sizing: border-box;
     display: inline-block;
@@ -98,7 +99,8 @@ figure {
     line-height: 24px;
     padding-top: 24px;
     width: auto;
+    -webkit-font-smoothing: antialiased;
     padding-bottom: 24px;
-    max-width: 50%;
+    max-width: 100%;
 
 }
