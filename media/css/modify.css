@@ -5,6 +5,13 @@
     background-color: #fff;
 }
 
+
+#drawer mdui-ripple {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+
 .mdui-theme-layout-dark a.mdui-chip {
     color: #fff;
 }
@@ -75,18 +82,7 @@ figure {
 
 
 .mdui-tooltip {
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
-.mdui-ripple {
-    border-bottom: 5px;
-}
 
-.mdui-list-item {
-    border-radius: 5px;
-}
-
-#menu .mdui-list-item {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
