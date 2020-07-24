@@ -68,3 +68,20 @@ figure {
 #post .mdui-card-media img {
     max-height: 75vh;
 }
+
+.mdui-card {
+    border-radius:5px;
+}
+
+
+.mdui-tooltip {
+    border-radius: 5px;
+}
+
+.mdui-ripple {
+    border-bottom: 5px;
+}
+
+.mdui-list-item {
+    border-radius: 5px;
+}

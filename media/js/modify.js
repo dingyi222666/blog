@@ -8,7 +8,7 @@ function toggleStyle() {
         }
     } else {
         var time = (new Date).getHours();
-        if('6' < time && time < '18') {
+        if('6' < time && time < '22') {
             setStyleLight()
         } else {
             setStyleDark();
@@ -23,6 +23,7 @@ function setStyleLight() {
     $('body').removeClass('mdui-theme-layout-dark');
     localStorage.setItem("style", "light");
 }
+
 if ("light" != typeof Storage) {
     "light" === localStorage.getItem("style") && setStyleLight();
 }
