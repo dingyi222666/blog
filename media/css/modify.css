@@ -85,4 +85,17 @@ figure {
     border-radius: 3px;
 }
 
+.myfoot-next {
+    
+    text-align: right;
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    height: 100%;
+    line-height: 24px;
+    padding-top: 24px;
+    width: 100%;
 
+}
