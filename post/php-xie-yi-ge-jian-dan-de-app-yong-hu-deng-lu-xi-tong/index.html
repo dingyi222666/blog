@@ -3,7 +3,7 @@
 <head>
 <!-- 必要参数 -->
 <meta charset="utf-8"/>
-<title>github pages 用netlify进行cdn加速 | dingyi</title>
+<title>php写一个简单的app用户登录系统 | dingyi</title>
 <meta name="keywords" content="关键词"/>
 <meta name="description" content="简述"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable:no"/>
@@ -44,46 +44,55 @@
     <section class="mdui-card">
         
         <div class="mdui-card-primary">
-            <div class="mdui-card-primary-title">github pages 用netlify进行cdn加速</div>
-            <div class="mdui-card-primary-subtitle">发布于 2020-07-24，包含标签 <a href="https://dingyi.dowy.cn/tag/mxhS31Xpt/" class="post-tags"># 技术</a>。</div>
+            <div class="mdui-card-primary-title">php写一个简单的app用户登录系统</div>
+            <div class="mdui-card-primary-subtitle">发布于 2020-07-30，包含标签 。</div>
         </div>
-        <div class="mdui-card-content"><h2 id="前言">前言</h2>
-<p>在我的第一篇博文里面，我搭建了一个静态博客。<br>
-但是，众所周知，github在国内的访问会非常慢，于是你就会得到这样的结果<br>
-<img src="https://i.loli.net/2020/07/24/oa2DSwVJpCkBs9X.png" alt="" loading="lazy"><br>
-是不是很cao蛋对吧。<br>
-我们也知道国内有很多的cdn服务，基本上是交一点钱就可以拉满了。<br>
-如果，你不想交钱你想<strong>白嫖</strong>呢？</p>
-<h2 id="主题">主题</h2>
-<p>虽然使用了netlify之后的效果提升也不是非常明显，但至少有提升了(<s>然而我这里的延时比github的还长</s>)<br>
-<img src="https://i.loli.net/2020/07/24/k8CqGLZVHYgSui2.png" alt="" loading="lazy"><br>
-首先我们访问netlify的<a href="https://app.netlify.com/">官网</a><br>
-(在访问这类外国网站的时候建议你翻梯子，不然的话可能会出现意想不到的神奇事件<s>比如卡加载主页</s>)</p>
-<p>如图<br>
-<img src="https://i.loli.net/2020/07/24/G2IYMWXehDRZvBt.png" alt="如图" loading="lazy"><br>
-然后我们点击New site from Git<br>
-进入如图的页面，选择github<br>
-<img src="https://i.loli.net/2020/07/24/vbcaXynLGNlZJ29.png" alt="" loading="lazy"><br>
-会弹出来新的窗口，你需要等待，然后确定啊啥的<br>
-接下来选择一个仓库用于搭建页面<br>
-<img src="https://s1.ax1x.com/2020/07/24/Uj4ajO.png" alt="" loading="lazy"><br>
-选择好了之后进入这个页面<br>
-<img src="https://s1.ax1x.com/2020/07/24/Uj5cdJ.png" alt="" loading="lazy"><br>
-这里直接下一步<br>
-就基本完成啦<br>
-<img src="https://s1.ax1x.com/2020/07/24/Uj5XWt.png" alt="完成后的主页" loading="lazy"><br>
-然后直接访问系统默认赠送的域名，就会发现可以了<br>
-对了，当你关联的仓库commit后这个网站就会自动更新</p>
-<h2 id="绑定域名">绑定域名</h2>
-<p>前面我们大体是完成了，但是这个域名太长啦，我们需要绑定自己的域名。<br>
-在你的网站主页里，点击Domain settings</p>
-<p>如图<br>
-<img src="https://s1.ax1x.com/2020/07/24/UjI5hn.png" alt="如图" loading="lazy"><br>
-然后输入你的需要绑定的域名，下一步。<br>
-一直下一步，直到回到了添加列表那里。<br>
-然后给你的域名直接cname解析到系统一开始赠送你的域名<br>
-等一会发现你添加的域名的颜色变成绿色，就说明添加成功了。</p>
-<h2 id="结语">结语</h2>
+        <div class="mdui-card-content"><h2 id="准备工作">准备工作</h2>
+<ul>
+<li>php环境</li>
+<li>phpmysqladmin环境</li>
+<li>学过sql,简单的那种就好了<br>
+(本人使用CodeIgniter框架开发，网址点<a href="https://codeigniter.org.cn/">这里</a>)</li>
+</ul>
+<h2 id="表的结构">表的结构</h2>
+<p>一般一个用户登录的表含有以下结构</p>
+<ul>
+<li>username(用户名)</li>
+<li>password(密码)</li>
+<li>id(<s>定位</s>)<br>
+当然了你也可以新增字段来实现保存其他信息，比如sex(性别)</li>
+</ul>
+<h2 id="数据安全">数据安全</h2>
+<p>安全方面我使用sign作为调用接口的安全验证，具体很简单，就是时间戳+所有提交的请求值+一个不公开的值进行md5</p>
+<h2 id="实现注册">实现注册</h2>
+<p>首先新建一个ci控制器类为sign(注册)，重写index函数<br>
+用<code>this-&gt;input-&gt;post('xx');</code>拿到需要的数据（username等）<br>
+验证sign值，就是md5比对，这个很简单，不用我多说.<br>
+但是我们还不能直接插入数据，首先需要拿当前的用户名，去查询一遍数据库查看是否有相同的用户名，有就说明注册过了无法再次注册.<br>
+sql语句:</p>
+<pre><code class="language-sql"> select id from user where username='这里填写你的username' 
+</code></pre>
+<p>需要注意的是你的数据需要过滤，以防止sql注册<br>
+完整的查询语句如下</p>
+<pre><code class="language-php">$sql=&quot;select count(*) from user where username = ? &quot;;
+if ($this-&gt;db-&gt;query($sql,[$username])-&gt;result_array()[0][&quot;count(*)&quot;]==&quot;0&quot;)     {            
+    //注册过了需要做的事情 
+  }
+</code></pre>
+<p>当确定请求的用户名没有被注册时，就可以进入到插入数据库了<br>
+插入的密码记得用<code>password_hash()</code>函数进行加密<br>
+插入的sql代码如下</p>
+<pre><code class="language-sql">insert into user (username,password) values ('your username','you password')
+</code></pre>
+<p>这样就吧注册给写好了</p>
+<h2 id="实现登录">实现登录</h2>
+<p>登录的话和上面基本一样。<br>
+拿到请求数据后，先检查数据库里面是否有相关对象，如果没有那就是没有注册过，这时候就说明登录失败。<br>
+检查代码和上面的代码基本一致，不同之处就是把那个0改成1<br>
+然后再进行一次查询取出对象</p>
+<pre><code class="language-sql">select * from user where username='you username'
+</code></pre>
+<p>使用<code>password_verify()</code>函数检查请求的密码是否和数据库的代码一致，一致就说明登录成功，否则登录失败</p>
 </div>
         <div class="mdui-card-header">
             <img class="mdui-card-header-avatar" src="https://dingyi.dowy.cn/images/avatar.png">
@@ -122,8 +131,8 @@
 </main>
 
 <nav class="mdui-container mdui-m-t-2 mdui-m-b-2">
-    <a href="https://dingyi.dowy.cn/post/php-xie-yi-ge-jian-dan-de-app-yong-hu-deng-lu-xi-tong/" mdui-tooltip="{content: '上一篇', position: 'right'}"><button class="mdui-btn mdui-btn-icon mdui-btn-dense mdui-color-theme-accent mdui-ripple mdui-m-r-1"><i class="mdui-icon material-icons">arrow_back</i></button>php写一个简单的app用户登录系统</a>
-    <a href="https://dingyi.dowy.cn/post/myfirstblog/" mdui-tooltip="{content: '下一篇', position: 'left'}" class="mdui-float-right">基于github pages的静态博客<button class="mdui-btn mdui-btn-icon mdui-btn-dense mdui-color-theme-accent mdui-ripple mdui-m-l-1"><i class="mdui-icon material-icons">arrow_forward</i></button></a>
+    
+    <a href="https://dingyi.dowy.cn/post/netlify-freecdn/" mdui-tooltip="{content: '下一篇', position: 'left'}" class="mdui-float-right">github pages 用netlify进行cdn加速<button class="mdui-btn mdui-btn-icon mdui-btn-dense mdui-color-theme-accent mdui-ripple mdui-m-l-1"><i class="mdui-icon material-icons">arrow_forward</i></button></a>
 </nav>
 
 <div class="mdui-m-t-2 mdui-text-center mdui-typo">
