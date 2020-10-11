@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://dingyi222666.github.io</id>
+    <id>https://dingyi.gjwa.cn</id>
     <title>dingyi</title>
-    <updated>2020-10-06T14:08:09.880Z</updated>
+    <updated>2020-10-11T02:03:26.624Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://dingyi222666.github.io"/>
-    <link rel="self" href="https://dingyi222666.github.io/atom.xml"/>
+    <link rel="alternate" href="https://dingyi.gjwa.cn"/>
+    <link rel="self" href="https://dingyi.gjwa.cn/atom.xml"/>
     <subtitle>dingyi</subtitle>
-    <logo>https://dingyi222666.github.io/images/avatar.png</logo>
-    <icon>https://dingyi222666.github.io/favicon.ico</icon>
+    <logo>https://dingyi.gjwa.cn/images/avatar.png</logo>
+    <icon>https://dingyi.gjwa.cn/favicon.ico</icon>
     <rights>All rights reserved 2020, dingyi</rights>
     <entry>
         <title type="html"><![CDATA[php写一个简单的app用户登录系统]]></title>
-        <id>https://dingyi222666.github.io/post/php-admin-sql/</id>
-        <link href="https://dingyi222666.github.io/post/php-admin-sql/">
+        <id>https://dingyi.gjwa.cn/post/php-admin-sql/</id>
+        <link href="https://dingyi.gjwa.cn/post/php-admin-sql/">
         </link>
         <updated>2020-07-30T15:35:46.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[github pages 用netlify进行cdn加速]]></title>
-        <id>https://dingyi222666.github.io/post/netlify-freecdn/</id>
-        <link href="https://dingyi222666.github.io/post/netlify-freecdn/">
+        <id>https://dingyi.gjwa.cn/post/netlify-freecdn/</id>
+        <link href="https://dingyi.gjwa.cn/post/netlify-freecdn/">
         </link>
         <updated>2020-07-24T06:35:21.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[基于github pages的静态博客]]></title>
-        <id>https://dingyi222666.github.io/post/myfirstblog/</id>
-        <link href="https://dingyi222666.github.io/post/myfirstblog/">
+        <id>https://dingyi.gjwa.cn/post/myfirstblog/</id>
+        <link href="https://dingyi.gjwa.cn/post/myfirstblog/">
         </link>
         <updated>2020-07-23T18:41:11.000Z</updated>
     </entry>
