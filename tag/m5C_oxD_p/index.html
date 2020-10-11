@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
 <!-- 必要参数 -->
 <meta charset="utf-8"/>
-<title>dingyi</title>
+<title>lua - dingyi</title>
 <meta name="keywords" content="关键词"/>
 <meta name="description" content="简述"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable:no"/>
@@ -14,7 +13,8 @@
 <link rel="stylesheet" href="https://dingyi.gjwa.cn/media/css/modify.css">
 <link rel="stylesheet" href="https://dingyi.gjwa.cn/media/style/main.css">
 </head>
-<body id="index" class="mdui-appbar-with-toolbar mdui-theme-primary-blue-grey mdui-theme-accent-blue mdui-theme-layout-dark">
+<body>
+<body class="mdui-appbar-with-toolbar mdui-theme-primary-blue-grey mdui-theme-accent-blue mdui-theme-layout-dark">
 <header role="banner">
     <div class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-shadow-0">
         <div class="mdui-toolbar">
@@ -38,7 +38,7 @@
 </nav>
 
 
-<main class="mdui-m-a-2 mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-xl-4 mdui-typo mdui-m-t-2">
+<main class="mdui-container mdui-typo mdui-m-t-2">
     
     <section class="mdui-col mdui-m-b-2">
         <div class="mdui-card" >
@@ -54,61 +54,6 @@ local data={}
 local myTable={}
 
 接下来写主要逻辑，实现监听函...</div>
-        </div>
-    </section>
-
-    <section class="mdui-col mdui-m-b-2">
-        <div class="mdui-card" >
-            
-            <div class="mdui-card-primary">
-                <div class="mdui-card-primary-title"><a href="https://dingyi.gjwa.cn/post/php-admin-sql/">php写一个简单的app用户登录系统</a></div>
-                <div class="mdui-card-primary-subtitle">2020-07-30</div>
-            </div>
-            <div class="mdui-card-content">准备工作
-
-php环境
-phpmysqladmin环境
-学过sql,简单的那种就好了
-(本人使用CodeIgniter框架开发，网址点这里)
-
-表的结构
-一般一个用户登录的表含有以下结构
-
-username(用户名)
-password(密码...</div>
-        </div>
-    </section>
-
-    <section class="mdui-col mdui-m-b-2">
-        <div class="mdui-card" >
-            
-            <div class="mdui-card-primary">
-                <div class="mdui-card-primary-title"><a href="https://dingyi.gjwa.cn/post/netlify-freecdn/">github pages 用netlify进行cdn加速</a></div>
-                <div class="mdui-card-primary-subtitle">2020-07-24</div>
-            </div>
-            <div class="mdui-card-content">前言
-在我的第一篇博文里面，我搭建了一个静态博客。
-但是，众所周知，github在国内的访问会非常慢，于是你就会得到这样的结果
-
-是不是很cao蛋对吧。
-我们也知道国内有很多的cdn服务，基本上是交一点钱就可以拉满了。
-如果，你不想交钱你想...</div>
-        </div>
-    </section>
-
-    <section class="mdui-col mdui-m-b-2">
-        <div class="mdui-card" >
-            
-            <div class="mdui-card-primary">
-                <div class="mdui-card-primary-title"><a href="https://dingyi.gjwa.cn/post/myfirstblog/">基于github pages的静态博客</a></div>
-                <div class="mdui-card-primary-subtitle">2020-07-24</div>
-            </div>
-            <div class="mdui-card-content">起因
-在搭建多次wordpress博客失败后(其实也不是失败就是最后都是😅)，我终于想起了静态博客
-过程
-然后百度搜索静态博客的搭建方法
-搜索出来大家都推荐hugo啥的，虽然好但是都是需要敲命令，对于我这样的小白不算是友好啊。
-然后在搜，...</div>
         </div>
     </section>
 
@@ -131,23 +76,6 @@ Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea<
 <script src="https://dingyi.gjwa.cn/media/js/jquery.min.js"></script>
 <script src="https://dingyi.gjwa.cn/media/js/mdui.min.js"></script>
 <script src="https://dingyi.gjwa.cn/media/js/modify.js"></script>
-<script src="https://dingyi.gjwa.cn/media/js/masonry.pkgd.min.js"></script>
-<script src="https://dingyi.gjwa.cn/media/js/imagesloaded.pkgd.min.js"></script>
-<script>
-// 初始化-文章列表页面瀑布流。
-function masonry() {
-    // 初始化 masonry
-    $('.mdui-row-xs-1').masonry({
-        itemSelector: '.mdui-col',
-        horizontalOrder: true
-    });
-}
-masonry()
-$('.mdui-col').imagesLoaded( function() {
-    masonry()
-});
-
-</script>
 
 </body>
 </html>

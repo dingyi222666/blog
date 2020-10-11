@@ -3,7 +3,7 @@
 <head>
 <!-- 必要参数 -->
 <meta charset="utf-8"/>
-<title>php写一个简单的app用户登录系统 | dingyi</title>
+<title>使用lua元表实现对table值变化监听 | dingyi</title>
 <meta name="keywords" content="关键词"/>
 <meta name="description" content="简述"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable:no"/>
@@ -44,55 +44,51 @@
     <section class="mdui-card">
         
         <div class="mdui-card-primary">
-            <div class="mdui-card-primary-title">php写一个简单的app用户登录系统</div>
-            <div class="mdui-card-primary-subtitle">发布于 2020-07-30，包含标签 <a href="https://dingyi.gjwa.cn/tag/tjRQg15tE/" class="post-tags"># php</a><a href="https://dingyi.gjwa.cn/tag/Q6vmHAYI1u/" class="post-tags"># sql</a>。</div>
+            <div class="mdui-card-primary-title">使用lua元表实现对table值变化监听</div>
+            <div class="mdui-card-primary-subtitle">发布于 2020-10-11，包含标签 <a href="https://dingyi.gjwa.cn/tag/m5C_oxD_p/" class="post-tags"># lua</a><a href="https://dingyi.gjwa.cn/tag/Xo1quD3mRv/" class="post-tags"># table</a><a href="https://dingyi.gjwa.cn/tag/mxhS31Xpt/" class="post-tags"># 技术</a>。</div>
         </div>
-        <div class="mdui-card-content"><h2 id="准备工作">准备工作</h2>
-<ul>
-<li>php环境</li>
-<li>phpmysqladmin环境</li>
-<li>学过sql,简单的那种就好了<br>
-(本人使用CodeIgniter框架开发，网址点<a href="https://codeigniter.org.cn/">这里</a>)</li>
-</ul>
-<h2 id="表的结构">表的结构</h2>
-<p>一般一个用户登录的表含有以下结构</p>
-<ul>
-<li>username(用户名)</li>
-<li>password(密码)</li>
-<li>id(<s>定位</s>)<br>
-当然了你也可以新增字段来实现保存其他信息，比如sex(性别)</li>
-</ul>
-<h2 id="数据安全">数据安全</h2>
-<p>安全方面我使用sign作为调用接口的安全验证，具体很简单，就是时间戳+所有提交的请求值+一个不公开的值进行md5</p>
-<h2 id="实现注册">实现注册</h2>
-<p>首先新建一个ci控制器类为sign(注册)，重写index函数<br>
-用<code>this-&gt;input-&gt;post('xx');</code>拿到需要的数据（username等）<br>
-验证sign值，就是md5比对，这个很简单，不用我多说.<br>
-但是我们还不能直接插入数据，首先需要拿当前的用户名，去查询一遍数据库查看是否有相同的用户名，有就说明注册过了无法再次注册.<br>
-sql语句:</p>
-<pre><code class="language-sql"> select id from user where username='这里填写你的username' 
+        <div class="mdui-card-content"><p>好久没写博客了，哈哈。<br>
+今天给大家带来一个骚操作，lua用元表实现对table值的变化监听<br>
+首先新建两个table，一个实际存放数据，一个用于操作</p>
+<pre><code class="language-lua">local data={}
+local myTable={}
 </code></pre>
-<p>需要注意的是你的数据需要过滤，以防止sql注册<br>
-完整的查询语句如下</p>
-<pre><code class="language-php">$sql=&quot;select count(*) from user where username = ? &quot;;
-if ($this-&gt;db-&gt;query($sql,[$username])-&gt;result_array()[0][&quot;count(*)&quot;]==&quot;0&quot;)     {            
-    //注册过了需要做的事情 
-  }
+<p>接下来写主要逻辑，实现监听函数</p>
+<pre><code class="language-lua">local function ___index(self, key)
+    if key == &quot;getData&quot; then -- getData也就是获取原来的数据
+        return function() return data end
+    else -- 不然就返回数据
+        return data[key]
+    end
+    return
+end
+local function __newindex(self, key, value)
+    if type(changeFunc)==&quot;function&quot; then
+        changeFunc(key,value)
+    end
+    data[key]=value
+ end
+
 </code></pre>
-<p>当确定请求的用户名没有被注册时，就可以进入到插入数据库了<br>
-插入的密码记得用<code>password_hash()</code>函数进行加密<br>
-插入的sql代码如下</p>
-<pre><code class="language-sql">insert into user (username,password) values ('your username','you password')
+<p>最后一步，设置myTable的元表</p>
+<pre><code class="language-lua">setmetatable(myTable,{
+     __index=___index,
+     __newindex=___newindex,
+ })
 </code></pre>
-<p>这样就吧注册给写好了</p>
-<h2 id="实现登录">实现登录</h2>
-<p>登录的话和上面基本一样。<br>
-拿到请求数据后，先检查数据库里面是否有相关对象，如果没有那就是没有注册过，这时候就说明登录失败。<br>
-检查代码和上面的代码基本一致，不同之处就是把那个0改成1<br>
-然后再进行一次查询取出对象</p>
-<pre><code class="language-sql">select * from user where username='you username'
+<p>然后我们试试运行下，再写入测试函数</p>
+<pre><code class="language-lua">local function test()
+   listenerTableChange(function ( key,value )
+       print(key..&quot; to change &quot;..value)
+   end)
+   myTable.class=5
+   myTable.class=4
+ end
 </code></pre>
-<p>使用<code>password_verify()</code>函数检查请求的密码是否和数据库的代码一致，一致就说明登录成功，否则登录失败</p>
+<p>最后运行，会打印出如下结果</p>
+<pre><code class="language-text"> class to change 5
+ class to change 4
+</code></pre>
 </div>
         <div class="mdui-card-header">
             <img class="mdui-card-header-avatar" src="https://dingyi.gjwa.cn/images/avatar.png">
@@ -131,8 +127,8 @@ if ($this-&gt;db-&gt;query($sql,[$username])-&gt;result_array()[0][&quot;count(*
 </main>
 
 <nav class="mdui-container mdui-m-t-2 mdui-m-b-2">
-    <a href="https://dingyi.gjwa.cn/post/lua-table-value/" mdui-tooltip="{content: '上一篇', position: 'right'}"><button class="mdui-btn mdui-btn-icon mdui-btn-dense mdui-color-theme-accent mdui-ripple mdui-m-r-1"><i class="mdui-icon material-icons">arrow_back</i></button>使用lua元表实现对table值变化监听</a>
-    <a href="https://dingyi.gjwa.cn/post/netlify-freecdn/" mdui-tooltip="{content: '下一篇', position: 'left'}" class="mdui-float-right">github pages 用netlify进行cdn加速<button class="mdui-btn mdui-btn-icon mdui-btn-dense mdui-color-theme-accent mdui-ripple mdui-m-l-1"><i class="mdui-icon material-icons">arrow_forward</i></button></a>
+    
+    <a href="https://dingyi.gjwa.cn/post/php-admin-sql/" mdui-tooltip="{content: '下一篇', position: 'left'}" class="mdui-float-right">php写一个简单的app用户登录系统<button class="mdui-btn mdui-btn-icon mdui-btn-dense mdui-color-theme-accent mdui-ripple mdui-m-l-1"><i class="mdui-icon material-icons">arrow_forward</i></button></a>
 </nav>
 
 <div class="mdui-m-t-2 mdui-text-center mdui-typo">
