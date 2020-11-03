@@ -50,7 +50,7 @@
         <div class="mdui-card-content"><p>好久没写博客了，哈哈。<br>
 今天给大家带来一个骚操作，lua用元表实现对table值的变化监听<br>
 首先新建两个table，一个实际存放数据，一个用于操作</p>
-<pre><code class="language-lua">local data={}
+<pre><code class="language-lua">
 local myTable={}
 changeFunc = ''
 function listenerTableChange(func) -- 监听函数
@@ -58,25 +58,16 @@ function listenerTableChange(func) -- 监听函数
 end
 </code></pre>
 <p>接下来写主要逻辑，实现监听函数</p>
-<pre><code class="language-lua">local function ___index(self, key)
-    if key == &quot;getData&quot; then -- getData也就是获取原来的数据
-        return function() return data end
-    else -- 不然就返回数据
-        return data[key]
-    end
-    return
-end
+<pre><code class="language-lua">
 local function __newindex(self, key, value)
     if type(changeFunc)==&quot;function&quot; then
         changeFunc(key,value)
     end
-    data[key]=value
  end
 
 </code></pre>
 <p>最后一步，设置myTable的元表</p>
 <pre><code class="language-lua">setmetatable(myTable,{
-     __index=___index,
      __newindex=___newindex,
  })
 </code></pre>
