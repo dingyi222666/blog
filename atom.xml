@@ -2,14 +2,14 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dingyi.gjwa.cn</id>
     <title>dingyi</title>
-    <updated>2020-11-03T13:26:42.824Z</updated>
+    <updated>2021-01-14T13:35:15.948Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dingyi.gjwa.cn"/>
     <link rel="self" href="https://dingyi.gjwa.cn/atom.xml"/>
     <subtitle>dingyi</subtitle>
     <logo>https://dingyi.gjwa.cn/images/avatar.png</logo>
     <icon>https://dingyi.gjwa.cn/favicon.ico</icon>
-    <rights>All rights reserved 2020, dingyi</rights>
+    <rights>All rights reserved 2021, dingyi</rights>
     <entry>
         <title type="html"><![CDATA[使用lua元表实现对table值变化监听]]></title>
         <id>https://dingyi.gjwa.cn/post/lua-table-value/</id>
